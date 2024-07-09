@@ -1,6 +1,6 @@
 /* Header Image Zoom Effect */
 #header {
-    background-image: url('./profile_picture.jpg');
+    background-image: url('./images/profile_picture.jpg');
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
