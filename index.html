@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,18 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-gray-900 text-gray-300">
+    <!-- Sticky Header Navigation -->
+    <header class="sticky-header flex justify-around py-4">
+        <a href="#header" class="text-white" style="display: none;">Home</a>
+        <a href="#about" class="text-white">About</a>
+        <a href="#skills" class="text-white">Skills</a>
+        <a href="#experience" class="text-white">Experience</a>
+        <a href="#projects" class="text-white">Projects</a>
+        <a href="#contact" class="text-white">Contact</a>
+    </header>
+
     <!-- Header Section -->
     <header class="relative h-screen bg-cover bg-center" id="header">
         <div class="absolute inset-0 bg-black opacity-50"></div>
@@ -28,15 +40,17 @@
     </header>
 
     <!-- About Section -->
-    <section class="mt-8 px-4 sm:px-6 lg:px-8">
+    <section id="about" class="mt-8 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl font-bold text-white">About Me</h2>
-            <p class="mt-2 text-lg">I am a passionate Software Engineer with 2 years of full-time experience in C++ development. I have a strong background in various programming languages and technologies, including Python, Java, and JavaScript.</p>
+            <p class="mt-2 text-lg">I am a passionate Software Engineer with 2 years of full-time experience in C++
+                development. I have a strong background in various programming languages and technologies, including
+                Python, Java, and JavaScript.</p>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="mt-8 bg-gray-800 py-8 shadow-sm">
+    <section id="skills" class="mt-8 bg-gray-800 py-8 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-white">Skills</h2>
             <ul class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center">
@@ -65,7 +79,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section class="mt-8 px-4 sm:px-6 lg:px-8">
+    <section id="experience" class="mt-8 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl font-bold text-white">Experience</h2>
             <div class="mt-4">
@@ -97,25 +111,31 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="mt-8 bg-gray-800 py-8 shadow-sm">
+    <section id="projects" class="mt-8 bg-gray-800 py-8 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-white">Projects</h2>
             <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div class="bg-gray-700 p-6 rounded-lg shadow-sm">
                     <h3 class="text-xl font-semibold text-white">Space Shooter</h3>
-                    <p class="text-gray-300">Re-created the classic Space Shooter game using Unity. Wrote C# scripts to handle various game components.</p>
-                    <a href="https://github.com/nbattel/Space-Shooter" target="_blank" class="text-blue-400 hover:underline mt-2 inline-block">
+                    <p class="text-gray-300">Re-created the classic Space Shooter game using Unity. Wrote C# scripts to
+                        handle various game components.</p>
+                    <a href="https://github.com/nbattel/Space-Shooter" target="_blank"
+                        class="text-blue-400 hover:underline mt-2 inline-block">
                         <img src="images/github_icon.png" alt="Space Shooter" class="h-8 w-8">
                     </a>
                 </div>
                 <div class="bg-gray-700 p-6 rounded-lg shadow-sm">
                     <h3 class="text-xl font-semibold text-white">Press Orchestra</h3>
-                    <p class="text-gray-300">Designed a mouthpiece using an Arduino RF transmitter/receiver, allowing people with paraplegia to play foot pedals on a piano/drum set.</p>
+                    <p class="text-gray-300">Designed a mouthpiece using an Arduino RF transmitter/receiver, allowing
+                        people with paraplegia to play foot pedals on a piano/drum set.</p>
                 </div>
                 <!-- Add more projects similarly -->
             </div>
         </div>
     </section>
+
+    <!-- Sticky footer button -->
+    <a id="backToTopBtn" class="back-to-top-btn text-white bg-gray-800 py-8 shadow-sm">^</a>
 
     <!-- Footer Section -->
     <footer class="mt-8 bg-gray-900 text-white py-4">
@@ -126,4 +146,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
