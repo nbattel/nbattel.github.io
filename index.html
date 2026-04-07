@@ -1,103 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Nick Battel | C++ Software Engineer Portfolio" />
-  <title>Nick Battel | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/favicon.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Battel - Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container">
-      <span class="brand">Nick Battel</span>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="container hero-content">
-      <img src="images/profile.png" alt="Nick Battel" class="profile-pic" />
-      <div class="hero-text">
-        <h1>C++ Software Engineer</h1>
-        <p>I build high-performance camera software, hardware-integrated systems, and cross-platform tools used in real-world production environments.</p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn primary-btn">View Projects</a>
-          <a href="resume.pdf" class="btn secondary-btn">Resume</a>
+<body class="bg-gray-900 text-gray-300">
+    <!-- Sticky Header Navigation -->
+    <header class="sticky-header flex justify-around py-4">
+        <a href="#header" class="text-white" style="display: none;">Home</a>
+        <a href="#about" class="text-white">About</a>
+        <a href="#skills" class="text-white">Skills</a>
+        <a href="#experience" class="text-white">Experience</a>
+        <a href="#projects" class="text-white">Projects</a>
+        <a href="#contact" class="text-white">Contact</a>
+    </header>
+
+    <!-- Header Section -->
+    <header class="relative h-screen bg-cover bg-center" id="header">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full text-center">
+            <h1 class="text-4xl font-bold text-white mt-4">Nicholas Battel</h1>
+            <p class="mt-2 text-white">Software Engineer</p>
+            <p class="mt-1 text-white">Ontario, Canada</p>
+            <div class="mt-2 flex space-x-4">
+                <a href="https://linkedin.com/in/nicholasbattel" target="_blank" class="text-blue-400 hover:underline">
+                    <img src="images/linkedin_icon.png" alt="LinkedIn" class="h-20 w-20">
+                </a>
+                <a href="https://github.com/nbattel" target="_blank" class="text-blue-400 hover:underline">
+                    <img src="images/github_icon.png" alt="GitHub" class="h-20 w-20">
+                </a>
+            </div>
         </div>
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- About Section -->
-  <section id="about" class="section about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I’m a software engineer based in Ontario specializing in systems programming, hardware integration, and performance-driven applications.</p>
-      <p>At IO Industries, I develop high-performance camera software used in real-world production environments. My work focuses on C++, hardware communication, and building reliable cross-platform tools.</p>
-      <p>I also enjoy working across the stack, building applications with modern technologies while continuously improving my engineering skills.</p>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="section experience">
-    <div class="container">
-      <h2>Experience</h2>
-      <div class="experience-item">
-        <h3>IO Industries — Software Engineer</h3>
-        <span class="duration">2022 – Present</span>
-        <ul>
-          <li>Developed high-performance C++ camera software used in production systems</li>
-          <li>Built USB3 Vision compliant hardware interfaces</li>
-          <li>Integrated Boost.Python bridging C++ and Python</li>
-          <li>Optimized image processing pipelines using FFmpeg</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="section projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <img src="images/space1.png" alt="Space Shooter" />
-          <h3>Space Shooter</h3>
-          <p>Unity game featuring custom AI, gameplay systems, and UI.</p>
-          <a href="https://github.com/nbattel/Space-Shooter" class="btn primary-btn">View Project →</a>
+    <!-- About Section -->
+    <section id="about" class="mt-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white">About Me</h2>
+            <p class="mt-2 text-lg">I am a passionate Software Engineer with 2 years of full-time experience in C++
+                development. I have a strong background in various programming languages and technologies, including
+                Python, Java, and JavaScript.</p>
         </div>
+    </section>
 
-        <div class="project-card">
-          <img src="images/press1.png" alt="Press Orchestra" />
-          <h3>Press Orchestra</h3>
-          <p>Assistive technology enabling paraplegic musicians to play instruments.</p>
-          <span class="top-rank">Top 12 / 133 projects</span>
+    <!-- Skills Section -->
+    <section id="skills" class="mt-8 bg-gray-800 py-8 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white">Skills</h2>
+            <ul class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center">
+                <li class="bg-gray-700 p-2 rounded">C++</li>
+                <li class="bg-gray-700 p-2 rounded">C</li>
+                <li class="bg-gray-700 p-2 rounded">C#</li>
+                <li class="bg-gray-700 p-2 rounded">Java</li>
+                <li class="bg-gray-700 p-2 rounded">Python</li>
+                <li class="bg-gray-700 p-2 rounded">JavaScript</li>
+                <li class="bg-gray-700 p-2 rounded">SQL</li>
+                <li class="bg-gray-700 p-2 rounded">HTML</li>
+                <li class="bg-gray-700 p-2 rounded">CSS</li>
+                <li class="bg-gray-700 p-2 rounded">React</li>
+                <li class="bg-gray-700 p-2 rounded">Redux</li>
+                <li class="bg-gray-700 p-2 rounded">Node.js</li>
+                <li class="bg-gray-700 p-2 rounded">Express.js</li>
+                <li class="bg-gray-700 p-2 rounded">MongoDB</li>
+                <li class="bg-gray-700 p-2 rounded">Jest</li>
+                <li class="bg-gray-700 p-2 rounded">Git</li>
+                <li class="bg-gray-700 p-2 rounded">Docker</li>
+                <li class="bg-gray-700 p-2 rounded">Qt</li>
+                <li class="bg-gray-700 p-2 rounded">.NET</li>
+                <li class="bg-gray-700 p-2 rounded">FFmpeg</li>
+            </ul>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <form action="https://formspree.io/f/YOUR_ID" method="POST" class="contact-form">
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="message" placeholder="Your message" required></textarea>
-        <button type="submit" class="btn primary-btn">Send Message</button>
-      </form>
-    </div>
-  </section>
+    <!-- Experience Section -->
+    <section id="experience" class="mt-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white">Experience</h2>
+            <div class="mt-4">
+                <div class="bg-gray-800 p-6 rounded shadow-sm mb-6">
+                    <h3 class="text-xl font-semibold text-white">IO Industries | Software Engineer</h3>
+                    <p class="text-gray-400">May 2022 - Present | London, Ontario</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-300">
+                        <li>Led C++ camera software development, integrating Boost.Python.</li>
+                        <li>Developed USB3 Vision compliant software using libusb-1.0.</li>
+                        <li>Enhanced cross-platform functionality with Qt integration.</li>
+                        <li>Optimized image processing with FFmpeg batch scripts.</li>
+                        <li>Pioneered automated CI/CD with Jenkins and TortoiseSVN.</li>
+                        <li>Developed a Python CLI to control cameras over a secure TCP connection.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded shadow-sm mb-6">
+                    <h3 class="text-xl font-semibold text-white">London Hydro | Software Developer (Contract)</h3>
+                    <p class="text-gray-400">September 2021 - April 2022 | Remote</p>
+                    <ul class="list-disc ml-6 mt-2 text-gray-300">
+                        <li>Created a blockchain-powered peer-to-peer energy marketplace using Hyperledger Fabric.</li>
+                        <li>Launched a blockchain network with smart contracts.</li>
+                        <li>Implemented agile methodologies, ensuring frequent and safe releases.</li>
+                        <li>Created unit tests for components using Jest.</li>
+                    </ul>
+                </div>
+                <!-- Add more experiences similarly -->
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="mt-8 bg-gray-800 py-8 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white">Projects</h2>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-white">Space Shooter</h3>
+                    <p class="text-gray-300">Re-created the classic Space Shooter game using Unity. Wrote C# scripts to
+                        handle various game components.</p>
+                    <a href="https://github.com/nbattel/Space-Shooter" target="_blank"
+                        class="text-blue-400 hover:underline mt-2 inline-block">
+                        <img src="images/github_icon.png" alt="Space Shooter" class="h-8 w-8">
+                    </a>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-white">Press Orchestra</h3>
+                    <p class="text-gray-300">Designed a mouthpiece using an Arduino RF transmitter/receiver, allowing
+                        people with paraplegia to play foot pedals on a piano/drum set.</p>
+                </div>
+                <!-- Add more projects similarly -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky footer button -->
+    <a id="backToTopBtn" class="back-to-top-btn text-white bg-gray-800 py-8 shadow-sm">^</a>
+
+    <!-- Footer Section -->
+    <footer class="mt-8 bg-gray-900 text-white py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2024 Nicholas Battel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
