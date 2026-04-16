@@ -158,6 +158,44 @@
       max-width: 900px;
     }
 
+    .hero-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+    }
+
+    .hero-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    /* Keep your name dominant */
+    .hero-header h1 {
+      margin: 0;
+    }
+
+    .hero-image img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      box-shadow: 0 0 40px rgba(79,255,176,0.15);
+      position: relative;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(79,255,176,0.12), transparent 70%);
+      z-index: -1;
+    }
+
     .hero-tag {
       font-family: var(--font-mono);
       font-size: 0.75rem;
@@ -852,6 +890,8 @@
       #contact .inner { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
       #skills .inner { padding: 5rem 1.5rem; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
+      .hero-main { flex-direction: column; align-items: flex-start; }
+      .hero-image img { width: 140px; height: 140px; margin-top: 2rem; }
     }
   </style>
 </head>
@@ -878,20 +918,28 @@
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
 
-    <div class="hero-content">
-      <div class="hero-tag">Software Engineer · Ontario, Canada</div>
-      <h1>
-        <span class="line1">Nicholas</span><br>
-        <span class="line2">Battel</span>
-      </h1>
-      <p class="hero-sub">
-        Building high-performance systems at the intersection of <strong style="color:var(--text)">embedded software</strong>, 
-        <strong style="color:var(--text)">full-stack development</strong>, and <strong style="color:var(--text)">computer vision</strong>. 
-        Currently shipping production C++ at IO Industries.
-      </p>
-      <div class="hero-actions">
-        <a href="#experience" class="btn-primary">View Experience</a>
-        <a href="#contact" class="btn-secondary">Get In Touch</a>
+    <div class="hero-main">
+      <div class="hero-content">
+        <div class="hero-tag">Software Engineer · Ontario, Canada</div>
+        <div class="hero-header">
+          <div class="hero-image">
+            <img src="images/profile_picture.jpg" alt="Nicholas Battel">
+          </div>
+          <h1>
+            <span class="line1">Nicholas</span><br>
+            <span class="line2">Battel</span>
+          </h1>
+        </div>
+        <p class="hero-sub">
+          Engineering high-performance <strong style="color:var(--text)">imaging</strong> and <strong style="color:var(--text)">computer vision</strong> systems, 
+          scalable <strong style="color:var(--text)">full-stack</strong> applications, high-throughput <strong style="color:var(--text)">data pipelines</strong>,
+          and low-level software that interfaces directly with hardware.
+          Currently shipping production C++ at IO Industries.
+        </p>
+        <div class="hero-actions">
+          <a href="#experience" class="btn-primary">View Experience</a>
+          <a href="#contact" class="btn-secondary">Get In Touch</a>
+        </div>
       </div>
     </div>
 
@@ -1036,12 +1084,16 @@
           <span class="exp-date">May 2022 – Present · London, ON</span>
         </div>
         <ul class="exp-bullets">
-          <li>Led <strong>C++ camera software development</strong>, integrating Boost.Python to build high-performance, cross-language SDKs</li>
-          <li>Engineered <strong>USB3 Vision-compliant drivers</strong> for 3rd-party cameras using libusb-1.0, enabling precise hardware-level control</li>
-          <li>Expanded cross-platform reach by integrating <strong>Qt</strong> for robust GUI and OS compatibility</li>
+          <li>Led <strong>C++ camera software development</strong>, building high-performance SDKs and cross-language integrations</li>
+          <li>Designed and implemented <strong>video and image processing pipelines</strong> for recording, review, export, and backup workflows</li>
+          <li>Developed <strong>custom conversion filters</strong> supporting multiple image and video formats across large datasets</li>
           <li>Built <strong>FFmpeg batch scripts</strong> for large-scale image processing pipelines, reducing processing time significantly</li>
-          <li>Pioneered <strong>automated CI/CD</strong> workflows with Jenkins and TortoiseSVN, cutting release friction across the team</li>
-          <li>Developed a <strong>Python CLI tool</strong> for remote camera control over secure TCP connections</li>
+          <li>Engineered <strong>direct disk access systems</strong> to stream frames without filesystem overhead</li>
+          <li>Recovered corrupted video files by <strong>parsing raw binary data and reconstructing frames</strong></li>
+          <li>Built <strong>USB3 Vision-compliant drivers</strong> using libusb for precise hardware-level control</li>
+          <li>Optimized <strong>high-throughput data pipelines</strong> for large-scale media processing</li>
+          <li>Developed <strong>automated testing frameworks with QTest</strong> to validate imaging systems</li>
+          <li>Integrated <strong>CI/CD pipelines using Jenkins</strong> to automate builds and testing</li>
         </ul>
       </div>
 
