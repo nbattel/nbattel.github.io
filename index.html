@@ -934,10 +934,9 @@
           </h1>
         </div>
         <p class="hero-sub">
-          Engineering high-performance <strong style="color:var(--text)">imaging</strong> and <strong style="color:var(--text)">computer vision</strong> systems, 
-          scalable <strong style="color:var(--text)">full-stack</strong> applications, high-throughput <strong style="color:var(--text)">data pipelines</strong>,
-          and low-level software that interfaces directly with hardware.
-          Currently shipping production C++ at IO Industries.
+          Building production-grade systems at the intersection of <strong style="color:var(--text)">imaging & data pipelines</strong>, 
+          <strong style="color:var(--text)">hardware-software integration</strong>, and <strong style="color:var(--text)">full-stack development</strong>. 
+          Currently engineering camera and data systems at IO Industries.
         </p>
         <div class="hero-actions">
           <a href="#experience" class="btn-primary">View Experience</a>
@@ -978,10 +977,10 @@
           I'm a Software Engineer based in Ontario, Canada — a graduate of <strong>Western University's Software Engineering program</strong> with 3+ years of full-time experience spanning embedded systems, web platforms, and hardware-interfacing tools.
         </p>
         <p>
-          By day I lead C++ camera software development at <strong>IO Industries</strong>, where I build USB3 Vision-compliant drivers, cross-platform tooling with Qt, and CI/CD pipelines that actually work. I care deeply about clean APIs, hardware reliability, and developer experience.
+          My core focus is <strong>imaging and data pipeline engineering</strong>: designing the systems that capture high-fidelity visual data from cameras and sensors, process and review it in real time, and manage its reliable export and long-term archival. At <strong>IO Industries</strong>, I work across the full chain — from the firmware interfaces that talk to hardware, through the processing layers that handle raw image data at scale, to the cross-platform tooling engineers and clients use every day.
         </p>
         <p>
-          I thrive across the stack — from low-level libusb drivers to blockchain smart contracts to Unity game logic. What unifies it all: <strong>a bias toward shipping</strong>, strong testing habits, and the belief that good software should be invisible.
+          Beyond imaging, I've shipped a <strong>blockchain-powered energy marketplace</strong> at London Hydro and built full-stack platforms from the ground up. What ties it all together: a deep respect for <strong>data integrity</strong>, a systems-level mindset, and the conviction that reliable software is what enables everything else.
         </p>
 
         <div class="about-links">
@@ -1022,51 +1021,69 @@
     <div class="inner">
       <div class="section-label">02 — Skills</div>
       <h2>Technical Arsenal</h2>
-
-      <div class="skills-groups">
+ 
+      <div class="skills-groups" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
         <div class="skill-group fade-in">
           <div class="skill-group-title">Languages</div>
           <div class="skill-tags">
             <span class="tag">C++</span>
             <span class="tag">C</span>
-            <span class="tag">C#</span>
             <span class="tag">Python</span>
+            <span class="tag">C#</span>
             <span class="tag">Java</span>
             <span class="tag">JavaScript</span>
             <span class="tag">SQL</span>
+            <span class="tag">Bash</span>
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
           </div>
         </div>
-
+ 
         <div class="skill-group fade-in fade-in-delay-1">
-          <div class="skill-group-title">Frameworks & Libraries</div>
+          <div class="skill-group-title">Imaging & Hardware</div>
+          <div class="skill-tags">
+            <span class="tag">FFmpeg</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">libusb-1.0</span>
+            <span class="tag">OpenSSL</span>
+            <span class="tag">Boost</span>
+            <span class="tag">Boost.Python</span>
+            <span class="tag">Qt</span>
+            <span class="tag">Arduino</span>
+            <span class="tag">USB3 Vision</span>
+            <span class="tag">GigE Vision</span>
+            <span class="tag">TCP/IP</span>
+          </div>
+        </div>
+ 
+        <div class="skill-group fade-in fade-in-delay-2">
+          <div class="skill-group-title">Web & Frameworks</div>
           <div class="skill-tags">
             <span class="tag">React</span>
             <span class="tag">React Native</span>
             <span class="tag">Redux</span>
-            <span class="tag">Django</span>
             <span class="tag">Node.js</span>
             <span class="tag">Express.js</span>
-            <span class="tag">Qt</span>
+            <span class="tag">Django</span>
             <span class="tag">.NET</span>
-            <span class="tag">Boost</span>
-            <span class="tag">OpenCV</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Hyperledger Fabric</span>
           </div>
         </div>
-
-        <div class="skill-group fade-in fade-in-delay-2">
-          <div class="skill-group-title">Tools & Infrastructure</div>
+ 
+        <div class="skill-group fade-in fade-in-delay-3">
+          <div class="skill-group-title">Dev Tools & Practices</div>
           <div class="skill-tags">
             <span class="tag">Git</span>
             <span class="tag">Docker</span>
             <span class="tag">Jenkins</span>
-            <span class="tag">MongoDB</span>
+            <span class="tag">CI/CD</span>
             <span class="tag">Jest</span>
-            <span class="tag">FFmpeg</span>
-            <span class="tag">Libusb-1.0</span>
-            <span class="tag">OpenSSL</span>
             <span class="tag">Selenium</span>
+            <span class="tag">SVN</span>
+            <span class="tag">Agile / Scrum</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Unity</span>
           </div>
         </div>
       </div>
@@ -1087,16 +1104,18 @@
           <span class="exp-date">May 2022 – Present · London, ON</span>
         </div>
         <ul class="exp-bullets">
-          <li>Led <strong>C++ camera software development</strong>, building high-performance SDKs and cross-language integrations</li>
+          <li>Led <strong>C++ camera software development</strong>, integrating Boost.Python to build high-performance, cross-language SDKs</li>
           <li>Designed and implemented <strong>video and image processing pipelines</strong> for record, review, export, and backup workflows</li>
+          <li>Expanded cross-platform reach by integrating <strong>Qt</strong> for robust GUI and OS compatibility</li>
           <li>Developed <strong>custom conversion filters</strong> supporting multiple image and video formats across large datasets</li>
           <li>Built <strong>FFmpeg batch scripts</strong> for large-scale image processing pipelines, reducing processing time significantly</li>
           <li>Engineered <strong>direct disk access systems</strong> to stream frames without filesystem overhead</li>
           <li>Recovered corrupted video files by <strong>parsing raw binary data and reconstructing frames</strong></li>
-          <li>Built <strong>USB3 and GigE Vision-compliant drivers</strong> using libusb for precise hardware-level control</li>
+          <li>Engineered <strong>USB3 and GigE Vision-compliant drivers</strong> for 3rd-party cameras using libusb-1.0, enabling precise hardware-level control</li>
           <li>Optimized <strong>high-throughput data pipelines</strong> for large-scale media processing</li>
           <li>Developed <strong>automated testing frameworks with QTest</strong> to validate imaging systems</li>
-          <li>Integrated <strong>CI/CD pipelines using Jenkins</strong> to automate builds and testing</li>
+          <li>Pioneered <strong>automated CI/CD</strong> workflows with Jenkins and TortoiseSVN, cutting release friction across the team</li>
+          <li>Developed a <strong>Python CLI tool</strong> for remote camera control over secure TCP connections</li>
         </ul>
       </div>
 
