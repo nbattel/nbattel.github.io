@@ -161,44 +161,7 @@
       max-width: 900px;
     }
 
-    .hero-main {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 4rem;
-    }
-
-    .hero-header {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    /* Keep your name dominant */
-    .hero-header h1 {
-      margin: 0;
-    }
-
-    .hero-image img {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--border);
-      box-shadow: 0 0 40px rgba(79,255,176,0.15);
-      position: relative;
-    }
-
-    .hero-image::after {
-      content: '';
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(79,255,176,0.12), transparent 70%);
-      z-index: -1;
-    }
-
+    /* ── HERO LAYOUT: tag → image+name row → sub → actions ── */
     .hero-tag {
       font-family: var(--font-mono);
       font-size: 0.75rem;
@@ -219,13 +182,38 @@
       background: var(--accent);
     }
 
+    /* Image + name sit side-by-side on desktop */
+    .hero-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 0.2em;
+    }
+
+    .hero-image {
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(79,255,176,0.3);
+      box-shadow: 0 0 32px rgba(79,255,176,0.12);
+      display: block;
+    }
+
     h1 {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-size: clamp(3rem, 7vw, 6.5rem);
       font-weight: 800;
       line-height: 1;
       letter-spacing: -0.03em;
-      margin-bottom: 0.2em;
+      margin: 0;
+      /* never allow h1 text to overflow its container */
+      min-width: 0;
     }
 
     h1 .line2 {
@@ -456,7 +444,7 @@
 
     .skills-groups {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 2rem;
       margin-top: 3.5rem;
     }
@@ -480,6 +468,7 @@
 
     .skill-group:nth-child(2) { --accent-line: var(--accent2); }
     .skill-group:nth-child(3) { --accent-line: var(--accent3); }
+    .skill-group:nth-child(4) { --accent-line: #ffb347; }
 
     .skill-group:hover { border-color: rgba(255,255,255,0.15); }
 
@@ -621,7 +610,6 @@
       position: relative;
       overflow: hidden;
       transition: transform 0.3s, border-color 0.3s;
-      text-decoration: none;
       display: block;
     }
 
@@ -637,6 +625,7 @@
       background: linear-gradient(135deg, rgba(79,255,176,0.04) 0%, transparent 60%);
       opacity: 0;
       transition: opacity 0.3s;
+      pointer-events: none;
     }
 
     .project-card:hover::after { opacity: 1; }
@@ -688,17 +677,18 @@
       font-size: 0.7rem;
       color: var(--text3);
       letter-spacing: 0.06em;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
       transition: color 0.2s;
+      position: relative;
+      z-index: 1;
     }
 
     .project-link:hover { color: var(--accent); }
-
-    .project-link svg { transition: transform 0.2s; }
-    .project-link:hover svg { transform: translate(2px, -2px); }
+    .project-link .arrow-icon { transition: transform 0.2s; }
+    .project-link:hover .arrow-icon { transform: translate(2px, -2px); }
 
     /* ── CONTACT ── */
     #contact {
@@ -884,17 +874,47 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
+      nav { padding: 1rem 1.25rem; }
       .nav-links { display: none; }
-      #hero { padding: 7rem 1.5rem 5rem; }
+
+      #hero { padding: 6rem 1.25rem 5rem; }
+
+      /* On mobile: stack image above name, image smaller and centered-left */
+      .hero-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .hero-image img {
+        width: 88px;
+        height: 88px;
+      }
+
+      /* h1 gets the full width with a comfortable font size */
+      h1 {
+        font-size: clamp(2.6rem, 12vw, 4rem);
+        letter-spacing: -0.02em;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .hero-sub { font-size: 1rem; margin-bottom: 2rem; }
       .hero-stats { display: none; }
-      section { padding: 5rem 1.5rem; }
+      .scroll-hint { left: 1.25rem; }
+
+      section { padding: 5rem 1.25rem; }
       #about .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      #contact .inner { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
-      #skills .inner { padding: 5rem 1.5rem; }
+      #contact .inner { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.25rem; }
+      #skills .inner { padding: 5rem 1.25rem; }
+      .projects-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
-      .hero-main { flex-direction: column; align-items: flex-start; }
-      .hero-image img { width: 140px; height: 140px; margin-top: 2rem; }
+    }
+
+    /* Extra-small phones (iPhone SE, etc.) */
+    @media (max-width: 390px) {
+      h1 { font-size: 2.4rem; }
+      .hero-image img { width: 72px; height: 72px; }
     }
   </style>
 </head>
@@ -921,27 +941,28 @@
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
 
-    <div class="hero-main">
-      <div class="hero-content">
-        <div class="hero-tag">Software Engineer · Ontario, Canada</div>
-        <div class="hero-header">
-          <div class="hero-image">
-            <img src="images/profile_picture.jpg" alt="Nicholas Battel">
-          </div>
-          <h1>
-            <span class="line1">Nicholas</span><br>
-            <span class="line2">Battel</span>
-          </h1>
+    <div class="hero-content">
+      <div class="hero-tag">Software Engineer · Ontario, Canada</div>
+
+      <!-- Photo sits beside the name on desktop; stacks above it on mobile -->
+      <div class="hero-header">
+        <div class="hero-image">
+          <img src="images/profile_picture.jpg" alt="Nicholas Battel">
         </div>
-        <p class="hero-sub">
-          Building production-grade systems at the intersection of <strong style="color:var(--text)">imaging & data pipelines</strong>, 
-          <strong style="color:var(--text)">hardware-software integration</strong>, and <strong style="color:var(--text)">full-stack development</strong>. 
-          Currently engineering camera and data systems at IO Industries.
-        </p>
-        <div class="hero-actions">
-          <a href="#experience" class="btn-primary">View Experience</a>
-          <a href="#contact" class="btn-secondary">Get In Touch</a>
-        </div>
+        <h1>
+          <span class="line1">Nicholas</span><br>
+          <span class="line2">Battel</span>
+        </h1>
+      </div>
+
+      <p class="hero-sub">
+        Building production-grade systems at the intersection of <strong style="color:var(--text)">imaging & data pipelines</strong>,
+        <strong style="color:var(--text)">hardware-software integration</strong>, and <strong style="color:var(--text)">full-stack development</strong>.
+        Currently engineering camera and data systems at IO Industries.
+      </p>
+      <div class="hero-actions">
+        <a href="#experience" class="btn-primary">View Experience</a>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
       </div>
     </div>
 
@@ -974,7 +995,7 @@
     <div class="about-grid">
       <div class="about-text fade-in">
         <p>
-          I'm a Software Engineer based in Ontario, Canada — a graduate of <strong>Western University's Software Engineering program</strong> with 3+ years of full-time experience spanning embedded systems, web platforms, and hardware-interfacing tools.
+          I'm a Software Engineer based in Ontario, Canada — a graduate of <strong>Western University's Software Engineering program</strong> with 3+ years of full-time experience building production systems where hardware meets software.
         </p>
         <p>
           My core focus is <strong>imaging and data pipeline engineering</strong>: designing the systems that capture high-fidelity visual data from cameras and sensors, process and review it in real time, and manage its reliable export and long-term archival. At <strong>IO Industries</strong>, I work across the full chain — from the firmware interfaces that talk to hardware, through the processing layers that handle raw image data at scale, to the cross-platform tooling engineers and clients use every day.
@@ -1021,8 +1042,8 @@
     <div class="inner">
       <div class="section-label">02 — Skills</div>
       <h2>Technical Arsenal</h2>
- 
-      <div class="skills-groups" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+
+      <div class="skills-groups">
         <div class="skill-group fade-in">
           <div class="skill-group-title">Languages</div>
           <div class="skill-tags">
@@ -1038,7 +1059,7 @@
             <span class="tag">CSS</span>
           </div>
         </div>
- 
+
         <div class="skill-group fade-in fade-in-delay-1">
           <div class="skill-group-title">Imaging & Hardware</div>
           <div class="skill-tags">
@@ -1055,7 +1076,7 @@
             <span class="tag">TCP/IP</span>
           </div>
         </div>
- 
+
         <div class="skill-group fade-in fade-in-delay-2">
           <div class="skill-group-title">Web & Frameworks</div>
           <div class="skill-tags">
@@ -1070,7 +1091,7 @@
             <span class="tag">Hyperledger Fabric</span>
           </div>
         </div>
- 
+
         <div class="skill-group fade-in fade-in-delay-3">
           <div class="skill-group-title">Dev Tools & Practices</div>
           <div class="skill-tags">
@@ -1079,6 +1100,7 @@
             <span class="tag">Jenkins</span>
             <span class="tag">CI/CD</span>
             <span class="tag">Jest</span>
+            <span class="tag">QTest</span>
             <span class="tag">Selenium</span>
             <span class="tag">SVN</span>
             <span class="tag">Agile / Scrum</span>
@@ -1181,10 +1203,10 @@
           <span class="project-tag">C#</span>
           <span class="project-tag">Game Dev</span>
         </div>
-        <a href="https://github.com/nbattel/Space-Shooter" class="project-link" target="_blank">
+        <a href="https://github.com/nbattel/Space-Shooter" class="project-link" target="_blank" rel="noopener noreferrer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
           View on GitHub
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
       </div>
 
@@ -1212,7 +1234,7 @@
         <p class="project-desc" style="font-size:0.82rem">
           Check my GitHub for the latest work in progress.
         </p>
-        <a href="https://github.com/nbattel" target="_blank" class="project-link" style="margin-top:0.5rem">
+        <a href="https://github.com/nbattel" target="_blank" rel="noopener noreferrer" class="project-link" style="margin-top:0.5rem">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
           github.com/nbattel
         </a>
